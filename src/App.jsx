@@ -1,47 +1,91 @@
 import { useState } from 'react'
 import './App.css'
 import Footer from './components/footer/footer'
+import HomeStep from './components/questionSteps/homeStep'
+import AlertStep from './components/questionSteps/alertStep'
+import Step2 from './components/questionSteps/step2'
+import Step3 from './components/questionSteps/step3'
+import Step4 from './components/questionSteps/step4'
+import Step5 from './components/questionSteps/step5'
+import Step6 from './components/questionSteps/step6'
+import Step7 from './components/questionSteps/step7'
+import Step8 from './components/questionSteps/step8'
+import ThankyouStep from './components/questionSteps/thankyouStep'
 
 function App() {
 
     let [step, setStep] = useState(0)
     let [formInfo, setFormInfo] = useState()
 
-
     return (
         <div className='page'>
 
-            <div className='homeContainer'>
-
-
-
                 {step === 0 &&
-                    <>
-                        <h1 className='mainTitle'>questionário de <span style={{ color: 'rgba(137, 137, 137, 1)' }}>pedido de proposta</span></h1>
-                        <span className='text'>Ajuda-nos a perceber um pouco sobre o teu negócio para encontrarmos a melhor forma de te ajudar.</span>
-                        {/* <span className='text'>este questionário é confidencial, e permite-nos ter acesso a informação fundamental antes de agendarmos uma reunião e de lhe apresentarmos a melhor proposta com base nas necessidades e objetivos do seu negócio.<span style={{ color: 'rgba(255, 255, 255, 1)' }}> pedimos-lhe, por favor, a maior honestidade quando o preencher.</span> ao submeter o questionário, dá-nos permissão para o contactarmos via whatsapp e/ou comunicarmos por email, assim como enviar promoções relacionadas. os seus dados estão protegidos.</span> */}
-                        <button onClick={() => setStep(1)} className='mainButton'>começar</button>
-                    </>
+                <div className='homeContainer'>
+                   <HomeStep setStep={setStep} />
+                   </div>
                 }
 
                 {step === 1 &&
-                    <>
-                        <span className='bigText'>este questionário é confidencial, e permite-nos ter acesso a informação fundamental antes de agendarmos uma reunião e de lhe apresentarmos a melhor proposta com base nas necessidades e objetivos do seu negócio.<span style={{ color: 'rgba(255, 255, 255, 1)' }}> pedimos-lhe, por favor, a maior honestidade quando o preencher.</span></span>
-                        <span className='text'> ao submeter o questionário, dá-nos permissão para o contactarmos via whatsapp e/ou comunicarmos por email, assim como enviar promoções relacionadas. os seus dados estão protegidos.</span>
-                        <button onClick={() => setStep(prev => prev + 1)} className='mainButton'>continuar</button>
-                    </>
+                <div className='homeContainer'>
+                   <AlertStep setStep={setStep} />
+                   </div>
+                }
+
+             
+ { step > 1 && step < 9 && 
+
+            <div className='regularContainer'>
+
+                {step === 2 &&
+                   <Step2 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+
+                 {step === 3 &&
+                   <Step3 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+
+                 {step === 4 &&
+                   <Step4 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+                 {step === 5 &&
+                   <Step5 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+                 {step === 6 &&
+                   <Step6 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+                 {step === 7 &&
+                   <Step7 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+                 {step === 8 &&
+                   <Step8 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
+                }
+
+             </div>}
+
+
+
+                  {step === 9 &&
+                <div className='homeContainer'>
+                   <ThankyouStep />
+                   </div>
                 }
 
 
 
 
-
-
-
-            </div>
+         
             <Footer />
         </div>
     )
 }
 
 export default App
+
+

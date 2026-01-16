@@ -100,9 +100,25 @@ h6 {
     flex-direction: column;
     gap: 50px;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     margin: auto;
+    padding-bottom: 100px;
+}
+
+.regularContainer{
+    padding: 50px;
+    max-width: 1000px;
+    display: flex;
+    gap: 20px;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+    margin: auto;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -162,6 +178,7 @@ h6 {
     padding: 10px 50px;
     gap: 20px;
     height: 80px;
+    z-index: 1;
 }
 
 .Btn {
@@ -259,5 +276,55 @@ ul {
         translate: 0 0;
         scale: 100% 1;
         opacity: 1;
+    }
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+
+    .homeContainer {
+        padding: 20px;
+        padding-bottom: 40px; /* Reduced from 200px */
+        min-height: 80vh;
+    }
+
+    .regularContainer{
+        padding: 20px;
+        padding-bottom: 40px; /* Reduced from 200px */
+    }
+
+    .bigText {
+        line-height: 1.1em;
+        font-size: 1.5em;
+    }
+
+    .mainTitle {
+        font-size: 2.3em;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 0.8em;
+        color: white;
+    }
+
+    .syena-full-logo {
+        width: 200px;
+        height: auto;
+    }
+
+    .footer {
+        position: relative;
+        transform: none; 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px; 
+        gap: 10px; /* Reduced for more compact footer */
+        height: auto; 
+        align-items: center;
+        max-width: 100%; /* Add this */
+        left: auto; /* Reset left positioning */
     }
 }

@@ -1,0 +1,73 @@
+
+.boxWrapper{
+    width: 600px;
+    height: fit-content;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.questionTitle{
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.answerWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0;
+    min-height: 40px;
+    border-bottom: 1px solid gray;
+}
+
+.inputLine {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    line-height: 1.4;
+
+    box-sizing: border-box;
+
+    min-height: 1.4em;
+    height: auto;
+}
+
+.inputLine:focus,
+.inputLine:active {
+    border: none;
+    outline: none;
+}
+
+
+@media (max-width: 1000px) {
+    .boxWrapper{
+        width: 100%;
+        max-width: 600px;
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .questionTitle{
+        font-size: 1.1em;
+    }
+
+    .inputLine {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+}
