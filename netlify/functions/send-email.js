@@ -3,6 +3,7 @@ const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 exports.handler = async (event) => {
+    console.log('Function called!'); // Add this
     // Only allow POST requests
     if (event.httpMethod !== 'POST') {
         return { statusCode: 405, body: 'Method Not Allowed' };
@@ -14,7 +15,7 @@ exports.handler = async (event) => {
         // Send email
         await resend.emails.send({
             from: 'onboarding@resend.dev', // Use this for testing, or your verified domain
-            to: 'chikengorme@gmail.com', // Your email where you want to receive notifications
+            to: 'chikengorme@gmail.com',
             subject: 'Syena | Pedido de serviços',
             html: `
         <h2>Novo preenchimendo de formumlário de serviços</h2>
@@ -25,6 +26,8 @@ exports.handler = async (event) => {
         <p><strong>Preenchido a::</strong> ${new Date().toLocaleString()}</p>
       `
         });
+
+        console.log('Email sent successfully:', result); // Add this
 
         return {
             statusCode: 200,
