@@ -17,70 +17,72 @@ function App() {
     let [step, setStep] = useState(0)
     let [formInfo, setFormInfo] = useState()
 
+
+
     return (
         <div className='page'>
 
-                {step === 0 &&
+            {step === 0 &&
                 <div className='homeContainer'>
-                   <HomeStep setStep={setStep} />
-                   </div>
-                }
+                    <HomeStep setStep={setStep} />
+                </div>
+            }
 
-                {step === 1 &&
+            {step === 1 &&
                 <div className='homeContainer'>
-                   <AlertStep setStep={setStep} />
-                   </div>
-                }
-
-             
- { step > 1 && step < 9 && 
-
-            <div className='regularContainer'>
-
-                {step === 2 &&
-                   <Step2 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
+                    <AlertStep setStep={setStep} />
+                </div>
+            }
 
 
-                 {step === 3 &&
-                   <Step3 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
+            {step > 1 && step < 9 &&
+
+                <div className='regularContainer'>
+
+                    {step === 2 &&
+                        <Step2 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
 
 
-                 {step === 4 &&
-                   <Step4 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
-
-                 {step === 5 &&
-                   <Step5 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
-
-                 {step === 6 &&
-                   <Step6 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
-
-                 {step === 7 &&
-                   <Step7 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
-
-                 {step === 8 &&
-                   <Step8 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo}/>
-                }
-
-             </div>}
+                    {step === 3 &&
+                        <Step3 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
 
 
+                    {step === 4 &&
+                        <Step4 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
 
-                  {step === 9 &&
+                    {step === 5 &&
+                        <Step5 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
+
+                    {step === 6 &&
+                        <Step6 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
+
+                    {step === 7 &&
+                        <Step7 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
+
+                    {step === 8 &&
+                        <Step8 formInfo={formInfo} setStep={setStep} setFormInfo={setFormInfo} />
+                    }
+
+                </div>}
+
+
+
+            {step === 9 &&
                 <div className='homeContainer'>
-                   <ThankyouStep />
-                   </div>
-                }
+                    <ThankyouStep />
+                </div>
+            }
 
 
 
 
-         
+
             <Footer />
         </div>
     )

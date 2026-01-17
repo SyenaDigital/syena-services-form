@@ -5,9 +5,9 @@ export default function SingleChoice({ fieldName, mandatory, setFormInfo, title,
 
     const [selectedOpts, setSelectedOpts] = useState([])
 
-    function toggleOption(option){
+    function toggleOption(option) {
         setSelectedOpts(option)
-        setFormInfo(prev => ({...prev, [fieldName]:option}))
+        setFormInfo(prev => ({ ...prev, [fieldName]: option }))
     }
 
     return (
@@ -16,18 +16,20 @@ export default function SingleChoice({ fieldName, mandatory, setFormInfo, title,
                 {title} {mandatory && <span style={{ color: 'red' }}>*</span>}
             </h2>
 
-            {opts.map(option => (
-                <div
-                    key={option}
-                    onClick={() => toggleOption(option)}
-                    className={styles.optionWrapper}
-                >
-                    <div className={styles.optionCheckbox} style={selectedOpts.includes(option) ? {backgroundColor:'#eefd22ff'} : {}}>
-                
+            <div className={styles.optionsWrapper}>
+                {opts.map(option => (
+                    <div
+                        key={option}
+                        onClick={() => toggleOption(option)}
+                        className={styles.optionWrapper}
+                    >
+                        <div className={styles.optionCheckbox} style={selectedOpts.includes(option) ? { backgroundColor: '#eefd22ff' } : {}}>
+
+                        </div>
+                        <span>{option}</span>
                     </div>
-                    <span>{option}</span>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }

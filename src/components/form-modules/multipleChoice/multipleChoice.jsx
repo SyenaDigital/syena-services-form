@@ -6,18 +6,18 @@ export default function MultipleChoice({ fieldName, mandatory, setFormInfo, titl
     const [selectedOpts, setSelectedOpts] = useState([])
 
     function toggleOption(option) {
-        setSelectedOpts(prev => {
-            const updated = prev.includes(option)
-                ? prev.filter(o => o !== option)
-                : [...prev, option]
+        const updated = selectedOpts.includes(option)
+            ? selectedOpts.filter(o => o !== option)
+            : [...selectedOpts, option]
 
-            setFormInfo(form => ({
-                ...form,
-                [fieldName]: updated
-            }))
 
-            return updated
-        })
+        setSelectedOpts(updated)
+
+
+        setFormInfo(form => ({
+            ...form,
+            [fieldName]: updated
+        }))
     }
 
     return (
@@ -26,18 +26,19 @@ export default function MultipleChoice({ fieldName, mandatory, setFormInfo, titl
                 {title} {mandatory && <span style={{ color: 'red' }}>*</span>}
             </h2>
 
-            {opts.map(option => (
-                <div
-                    key={option}
-                    onClick={() => toggleOption(option)}
-                    className={styles.optionWrapper}
-                >
-                    <div className={styles.optionCheckbox} style={selectedOpts.includes(option) ? {backgroundColor:'#eefd22ff'} : {}}>
-                
+            <div className={styles.optionsWrapper}>
+                {opts.map(option => (
+                    <div
+                        key={option}
+                        className={styles.optionWrapper}
+                    >
+                        <div onClick={() => toggleOption(option)} className={styles.optionCheckbox} style={selectedOpts.includes(option) ? { backgroundColor: '#eefd22ff' } : {}}>
+                            {selectedOpts.includes(option) ? '✓' : ''}
+                        </div>
+                        <span>{option}</span>
                     </div>
-                    <span>{option}</span>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }
