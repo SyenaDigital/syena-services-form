@@ -15,7 +15,7 @@ export default function Step8({ setStep, formInfo, setFormInfo }) {
 
 
             try {
-                await fetch('/.netlify/functions/send-email', {
+                await fetch('/api/send-email', {  // ✅ Vercel API route
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
