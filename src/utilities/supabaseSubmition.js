@@ -1,8 +1,7 @@
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-console.log('URL:', SUPABASE_URL)
-console.log('Key exists:', !!SUPABASE_ANON_KEY)
+
 
 
 export default async function submitFormToSupabase(formInfo) {
