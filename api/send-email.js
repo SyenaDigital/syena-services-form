@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         const data = req.body;
 
         const result = await resend.emails.send({
-            from: 'noreply@syenadigital.com',
+            from: 'Syena@syenadigital.com',
             to: 'chikengorme@gmail.com',
             subject: 'Syena | Pedido de serviços',
             html: `
