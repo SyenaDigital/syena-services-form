@@ -4,7 +4,7 @@ export default function Footer() {
 
     return (
         <div className='footer'>
-            <img className='syena-full-logo' src="src\assets\logo_completo_branco.png" alt="syena-logo" />
+            <img className='syena-full-logo' src="https://i.ibb.co/BVpLhdtk/logo-completo-branco.png" alt="syena-logo" />
 
             <ul class="example-1">
 
