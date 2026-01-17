@@ -17,7 +17,7 @@ exports.handler = async (event) => {
 
         const result = await resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: 'sergio@syenadigital.com',
+            to: 'chikengorme@gmail.com',
             subject: 'Syena | Pedido de serviços',
             html: `
         <h2>Preenchimento de formulário de serviços</h2>
