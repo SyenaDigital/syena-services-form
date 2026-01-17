@@ -6,16 +6,31 @@ export default function Step8({ setStep, formInfo, setFormInfo }) {
 
     let [allFilled, setAllFilled] = useState(false)
 
-    function sendInfo() {
+    async function sendInfo() {
         if (allFilled) {
             setStep(prev => prev + 1);
-            submitFormToSupabase(formInfo);
+
+
+            await submitFormToSupabase(formInfo);
+
+
+            try {
+                await fetch('/.netlify/functions/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formInfo)
+                });
+            } catch (error) {
+                console.error('Error sending email:', error);
+            }
+
             return
         }
         alert('Por favor preenche todos os campos obrigatórios')
         return
     }
-
 
     useEffect(() => {
         if (
