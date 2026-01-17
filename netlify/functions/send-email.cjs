@@ -16,7 +16,7 @@ exports.handler = async (event) => {
         console.log('Attempting to send email...');
 
         const result = await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'sergio@syenadigital.com',
             to: 'chikengorme@gmail.com',
             subject: 'Syena | Pedido de serviços',
             html: `
