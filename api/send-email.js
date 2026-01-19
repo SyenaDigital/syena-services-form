@@ -13,13 +13,13 @@ export default async function handler(req, res) {
 
         const result = await resend.emails.send({
             from: 'Syena@syenadigital.com',
-            to: 'chikengorme@gmail.com',
+            to: 'andre@syenadigital.com',
             subject: 'Syena | Pedido de serviços',
             html: `
         <h2>Preenchimento de formulário de serviços</h2>
         <p><strong>Nome:</strong> ${data.nome || 'N/A'}</p>
         <p><strong>Email:</strong> ${data.email || 'N/A'}</p>
-        <p><strong>Telefone:</strong> ${data.numero_whatsapp || 'N/A'}</p>
+        <p><strong>Telefone:</strong> ${data.numeroWhatsapp || 'N/A'}</p>
         <p><strong>Instagram:</strong> ${data.instaName || 'N/A'}</p>
         <p><strong>Preenchido a:</strong> ${new Date().toLocaleString()}</p>
       `
