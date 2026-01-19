@@ -171,6 +171,11 @@ button:active {
     animation-name: slide-in;
 }
 
+.formFieldAnimation {
+    animation-duration: 1s;
+    animation-name: slide-in;
+}
+
 .bigText {
     line-height: 1.1em;
     font-size: 2em;

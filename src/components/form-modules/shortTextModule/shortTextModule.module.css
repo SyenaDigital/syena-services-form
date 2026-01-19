@@ -1,5 +1,4 @@
-
-.boxWrapper{
+.boxWrapper {
     width: 600px;
     height: fit-content;
     border: none;
@@ -13,7 +12,7 @@
     gap: 20px;
 }
 
-.questionTitle{
+.questionTitle {
     position: relative;
     font-size: 1.2em;
     line-height: 1em;
@@ -22,7 +21,7 @@
 }
 
 
-.answerWrapper{
+.answerWrapper {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -56,18 +55,19 @@
 
 
 @media (max-width: 1000px) {
-    .boxWrapper{
+    .boxWrapper {
         width: 100%;
         max-width: 600px;
         padding: 30px 20px;
         border-radius: 15px;
     }
 
-    .questionTitle{
+    .questionTitle {
         font-size: 1.1em;
     }
 
     .inputLine {
-        font-size: 16px; /* Prevents iOS zoom on focus */
+        font-size: 16px;
+        /* Prevents iOS zoom on focus */
     }
 }

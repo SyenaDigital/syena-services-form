@@ -11,7 +11,7 @@ export default function SingleChoice({ fieldName, mandatory, setFormInfo, title,
     }
 
     return (
-        <div className={styles.boxWrapper}>
+        <div className={`${styles.boxWrapper} formFieldAnimation`}>
             <h2 className={styles.questionTitle}>
                 {title} {mandatory && <span style={{ color: 'red' }}>*</span>}
             </h2>
