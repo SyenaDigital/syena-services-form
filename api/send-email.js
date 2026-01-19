@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
         const result = await resend.emails.send({
             from: 'Syena@syenadigital.com',
-            to: 'bfm299@gmail.com',
+            to: 'andre@syenadigital.com',
             subject: 'Syena | Pedido de serviços',
             html: `
         <h2>Preenchimento de formulário de serviços</h2>
