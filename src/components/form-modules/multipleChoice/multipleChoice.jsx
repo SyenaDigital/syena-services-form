@@ -1,24 +1,20 @@
-import { useState } from 'react'
 import styles from './multipleChoice.module.css'
 
-export default function MultipleChoice({ fieldName, mandatory, setFormInfo, title, opts }) {
-
-    const [selectedOpts, setSelectedOpts] = useState([])
+export default function MultipleChoice({ fieldName, mandatory, formInfo, setFormInfo, title, opts }) {
 
     function toggleOption(option) {
-        const updated = selectedOpts.includes(option)
-            ? selectedOpts.filter(o => o !== option)
-            : [...selectedOpts, option]
-
-
-        setSelectedOpts(updated)
-
+        const currentValues = formInfo?.[fieldName] || []
+        const updated = currentValues.includes(option)
+            ? currentValues.filter(o => o !== option)
+            : [...currentValues, option]
 
         setFormInfo(form => ({
             ...form,
             [fieldName]: updated
         }))
     }
+
+    const selectedOpts = formInfo?.[fieldName] || []
 
     return (
         <div className={`${styles.boxWrapper} formFieldAnimation`}>
@@ -32,7 +28,11 @@ export default function MultipleChoice({ fieldName, mandatory, setFormInfo, titl
                         key={option}
                         className={styles.optionWrapper}
                     >
-                        <div onClick={() => toggleOption(option)} className={styles.optionCheckbox} style={selectedOpts.includes(option) ? { backgroundColor: '#eefd22ff' } : {}}>
+                        <div
+                            onClick={() => toggleOption(option)}
+                            className={styles.optionCheckbox}
+                            style={selectedOpts.includes(option) ? { backgroundColor: '#eefd22ff' } : {}}
+                        >
                             {selectedOpts.includes(option) ? '✓' : ''}
                         </div>
                         <span>{option}</span>

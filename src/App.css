@@ -93,10 +93,6 @@ button {
     -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
-    background: #0053ba;
-}
 
 button:focus {
     outline: 1px solid #fff;
@@ -187,20 +183,42 @@ button:active {
 
 .mainButton {
     width: fit-content;
-    margin: 0 auto;
     border: none;
     border-radius: 25px;
     padding: 10px 45px;
     font-weight: 700;
-    background-color: rgb(225, 255, 0);
+    background-color: rgb(255, 0, 55);
     border: 1px solid rgb(2, 2, 2);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    color: black;
+    color: rgb(255, 255, 255);
+    margin: 0 auto;
 }
 
+.backButton {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(56, 56, 56);
+    border: 1px solid rgb(123, 123, 123);
+    padding: 10px;
+    margin: 0 auto;
+}
 
-.mainButton:hover {
+.backButton:hover,
+.backButton:focus {
+    background-color: gray;
+}
+
+.navButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    height: 40px;
+}
+
+.mainButton:hover,
+.mainButton:focus {
     background-color: transparent;
     border: 1px solid rgb(255, 255, 255);
     color: rgb(255, 255, 255);
@@ -348,7 +366,7 @@ ul {
     }
 
     .mainTitle {
-        font-size: 2.8em;
+        font-size: 3.2em;
         font-weight: 300;
         text-transform: uppercase;
         line-height: 0.8em;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import ShortTextModule from "../form-modules/shortTextModule/shortTextModule"
 import submitFormToSupabase from "../../utilities/supabaseSubmition"
+import { icons } from "../../assets/icons"
 
 export default function Step8({ setStep, formInfo, setFormInfo }) {
 
@@ -43,11 +44,24 @@ export default function Step8({ setStep, formInfo, setFormInfo }) {
         }
     }, [formInfo])
 
+    function goPrevBack() {
+        // setFormInfo(prev => ({
+        //     ...prev,
+        //     numeroWhatsapp: null,
+        //     email: null,
+        // }))
+        setStep(prev => prev - 1)
+    }
+
+
     return (
         <>
-            <ShortTextModule fieldName={'numeroWhatsapp'} mandatory={true} setFormInfo={setFormInfo} title={'qual o seu número de WhatsApp?'} />
-            <ShortTextModule fieldName={'email'} mandatory={true} setFormInfo={setFormInfo} title={'qual é email através do qual o podemos contactar? '} />
-            <button onClick={() => sendInfo()} className='mainButton'>enviar</button>
+            <ShortTextModule fieldName={'numeroWhatsapp'} mandatory={true} formInfo={formInfo} setFormInfo={setFormInfo} title={'qual o seu número de WhatsApp?'} />
+            <ShortTextModule fieldName={'email'} mandatory={true} formInfo={formInfo} setFormInfo={setFormInfo} title={'qual é email através do qual o podemos contactar? '} />
+            <div className="navButtonWrapper">
+                <button onClick={() => goPrevBack()} className='backButton'>{icons.backArrowIcon()}</button>
+                <button onClick={() => allFilled ? setStep(prev => prev + 1) : alert('Por favor preenche todos os campos obrigatórios')} className='mainButton'>continuar</button>
+            </div>
         </>
     )
 }

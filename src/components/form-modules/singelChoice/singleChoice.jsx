@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './singleChoice.module.css'
 
-export default function SingleChoice({ fieldName, mandatory, setFormInfo, title, opts }) {
+export default function SingleChoice({ fieldName, mandatory, formInfo, setFormInfo, title, opts }) {
 
     const [selectedOpts, setSelectedOpts] = useState([])
 
@@ -9,6 +9,12 @@ export default function SingleChoice({ fieldName, mandatory, setFormInfo, title,
         setSelectedOpts(option)
         setFormInfo(prev => ({ ...prev, [fieldName]: option }))
     }
+
+    useEffect(() => {
+        if (formInfo[fieldName]) {
+            setSelectedOpts(formInfo[fieldName])
+        }
+    }, formInfo)
 
     return (
         <div className={`${styles.boxWrapper} formFieldAnimation`}>

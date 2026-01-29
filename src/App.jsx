@@ -15,7 +15,7 @@ import ThankyouStep from './components/questionSteps/thankyouStep'
 function App() {
 
     let [step, setStep] = useState(0)
-    let [formInfo, setFormInfo] = useState()
+    let [formInfo, setFormInfo] = useState({})
 
 
 

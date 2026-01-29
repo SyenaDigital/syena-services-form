@@ -1,7 +1,7 @@
 import styles from './shortTextModule.module.css'
 
 
-export default function ShortTextModule({ title, fieldName, placeholder, mandatory, setFormInfo }) {
+export default function ShortTextModule({ title, fieldName, formInfo, placeholder, mandatory, setFormInfo }) {
 
 
     return (
@@ -13,6 +13,7 @@ export default function ShortTextModule({ title, fieldName, placeholder, mandato
                     maxLength={800}
                     className={styles.inputLine}
                     placeholder={placeholder || 'resposta aqui'}
+                    value={formInfo[fieldName] || ''}
                     onInput={(e) => {
                         e.target.style.height = 'auto'
                         e.target.style.height = `${e.target.scrollHeight}px`
