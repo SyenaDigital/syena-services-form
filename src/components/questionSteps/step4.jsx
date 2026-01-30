@@ -8,14 +8,13 @@ export default function Step4({ setStep, formInfo, setFormInfo }) {
     let [allFilled, setAllFilled] = useState(false)
 
     const faturacaoOpts = [
-        'menos de 50.000€ anuais',
+        'menos de 25.000€ anuais',
+        '25.000€ - 50.000€ anuais',
         '50.000 - 100.000€ anuais',
-        '100.000 - 250.000€ anuais',
-        '250.000 - 500.000€ anuais',
+        '100.000€ - 250.000€ anuais',
+        '250.000€ - 500.000€ anuais',
         '500.000€ - 1.000.000€ anuais',
-        '1.000.000€ a 3.000.000€ anuais',
-        '3.000.000€ a 5.000.000€ anuais',
-        '+ 5.000.000 anuais',
+        'mais de 1.000.000€ anuais',
     ]
 
     const marketingOpts = [
