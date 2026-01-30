@@ -60,7 +60,7 @@ export default function Step8({ setStep, formInfo, setFormInfo }) {
             <ShortTextModule fieldName={'email'} mandatory={true} formInfo={formInfo} setFormInfo={setFormInfo} title={'qual é email através do qual o podemos contactar? '} />
             <div className="navButtonWrapper">
                 <button onClick={() => goPrevBack()} className='backButton'>{icons.backArrowIcon()}</button>
-                <button onClick={() => allFilled ? setStep(prev => prev + 1) : alert('Por favor preenche todos os campos obrigatórios')} className='mainButton'>continuar</button>
+                <button onClick={() => allFilled ? sendInfo() : alert('Por favor preenche todos os campos obrigatórios')} className='mainButton'>continuar</button>
             </div>
         </>
     )
